@@ -1,11 +1,13 @@
 import './App.css';
-import Card from './component/card';
+import CardsContainer from './component/cardsContainer';
+import Header from './component/header';
 import axios from 'axios';
 import { useState, useEffect, useRef } from 'react';
 
 function App() {
 
   const [fetchedData, setFetchedData] = useState([]);
+  const [darkTheme, setDarkTheme] = useState(false)
 
   useEffect(() => {
     axios.get("https://restcountries.com/v2/all").then(res => setFetchedData(res.data));
@@ -15,9 +17,11 @@ function App() {
   console.log(fetchedData)
 
   return (
-    <div className="App">
-    {fetchedData.length !== 0 && fetchedData.map(item => <Card key={item.name} data={item}/>)}
-    </div>
+    <>
+      <Header darkTheme={darkTheme}/>
+      <CardsContainer data={fetchedData}/>
+    </>
+
   );
 }
 

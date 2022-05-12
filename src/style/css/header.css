@@ -1,0 +1,23 @@
+.header {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.234);
+}
+.header .container {
+  max-width: 1150px;
+  margin: 0 auto 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+}
+.header .container .themeSwitch {
+  border: none;
+  font-size: 1.1rem;
+  background-color: transparent;
+  font-weight: 600;
+  cursor: pointer;
+}
+.header .container .themeSwitch .fa-moon {
+  margin-right: 0.5rem;
+}
+
+/*# sourceMappingURL=header.css.map */

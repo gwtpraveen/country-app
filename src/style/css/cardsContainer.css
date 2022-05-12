@@ -1,0 +1,11 @@
+.row {
+  max-width: 1150px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=cardsContainer.css.map */
