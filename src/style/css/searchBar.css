@@ -1,0 +1,9 @@
+.searchBar {
+  max-width: 1050px;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*# sourceMappingURL=searchBar.css.map */

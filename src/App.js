@@ -1,6 +1,7 @@
 import './App.css';
 import CardsContainer from './component/cardsContainer';
 import Header from './component/header';
+import SearchBar from './component/searchBar';
 import axios from 'axios';
 import { useState, useEffect, useRef } from 'react';
 
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <Header darkTheme={darkTheme}/>
+      <SearchBar/>
       <CardsContainer data={fetchedData}/>
     </>
 
