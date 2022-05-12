@@ -1,0 +1,27 @@
+.card {
+  width: 260px;
+  height: 340px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: gray;
+}
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.card .cardDetails {
+  padding: 1rem;
+}
+.card .cardDetails .h2 {
+  font-size: 19px;
+  margin-bottom: 1rem;
+}
+.card .cardDetails .dataRow {
+  margin-bottom: 0.3rem;
+}
+.card .cardDetails .dataRow .bold {
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=card.css.map */
