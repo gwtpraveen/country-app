@@ -37,8 +37,8 @@
             }
         }
     }
+}
 
-    &:hover .dropdown-content {
-        display: block;
-    }
+.dropdown.show .dropdown-content {
+    display: block;
 }

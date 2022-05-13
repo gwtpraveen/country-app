@@ -2,7 +2,6 @@ import "../style/css/card.css";
 
 const Card = ({data}) => {
     const {name, population, region, capital, flags : {png}} = data;
-    console.log(png)
     return ( 
         <div className="card">
             <img src={png} alt="" />

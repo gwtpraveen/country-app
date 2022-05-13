@@ -1,13 +1,18 @@
 import "../style/css/dropdown.css";
 
-const DropDown = (props) => {
+const DropDown = ({regions}) => {
     return ( 
         <div className="dropdown">
-            <button className="dropbtn">Dropdown <i class="fa-solid fa-angle-down"></i></button>
+            <button 
+                className="dropbtn" 
+                onClick={e => {
+                    e.target.parentElement.classList.toggle("show");}
+            }>
+                Dropdown 
+                <i className="fa-solid fa-angle-down"></i>
+            </button>
             <div className="dropdown-content">
-                <p>Link 1</p>
-                <p>Link 2</p>
-                <p>Link 3</p>
+                {regions.length > 0 && regions.map(item => <p>{item}</p>)}
             </div>
         </div>
      );
