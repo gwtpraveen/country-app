@@ -9,32 +9,32 @@ function App() {
 
   const [fetchedData, setFetchedData] = useState([]);
   const [darkTheme, setDarkTheme] = useState(false);
-  // const regions = useRef([]);
-  const [regions, setRegions] = useState([])
+  const regions = useRef([]);
 
   useEffect(() => {
     axios.get("https://restcountries.com/v2/all").then(res => {
       setFetchedData(preVal => {
+        // fetched data from the server
         const newData = res.data;
+
+        // filtering regions for the dropdown 
         newData.forEach(item => {
           const currentRegion = item.region;
           if (!regions.current.includes(currentRegion)) {
             regions.current.push(currentRegion);
           }
         });
+        
         return newData;
       });
     });
   }, []);
   
-  console.log("rendering")
-  console.log("regions", regions)
-  console.log(fetchedData)
 
   return (
     <>
       <Header darkTheme={darkTheme}/>
-      <SearchBar regions={regions}/>
+      <SearchBar regions={regions.current}/>
       <CardsContainer data={fetchedData}/>
     </>
 

@@ -6,13 +6,19 @@ const DropDown = ({regions}) => {
             <button 
                 className="dropbtn" 
                 onClick={e => {
-                    e.target.parentElement.classList.toggle("show");}
+                    const targetEleParentEl = e.target.parentElement;
+                    if (targetEleParentEl.tagName === "DIV") {
+                        targetEleParentEl.classList.toggle("show");
+                    } else {
+                        targetEleParentEl.parentElement.classList.toggle("show");
+                    }
+                }
             }>
                 Dropdown 
                 <i className="fa-solid fa-angle-down"></i>
             </button>
             <div className="dropdown-content">
-                {regions.length > 0 && regions.map(item => <p>{item}</p>)}
+                {regions.map(item => <p key={item}>{item}</p>)}
             </div>
         </div>
      );
