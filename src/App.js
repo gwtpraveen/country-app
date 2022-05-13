@@ -44,6 +44,16 @@ function App() {
   };
 
 
+  const handleTheme = value => {
+    setDarkTheme(value);
+    if (value) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  };
+
+
   // filtering the data 
   let filterdData = fetchedData;
   if (filterRegion) {
@@ -56,7 +66,7 @@ function App() {
 
   return (
     <>
-      <Header darkTheme={darkTheme} setReset={handleReset}/>
+      <Header darkTheme={darkTheme} setDarkTheme={handleTheme} setReset={handleReset}/>
       <SearchBar regions={regions.current} setFilterRegion={setFilterRegion} setUserSearch={handleUserSearch}/>
       <CardsContainer data={filterdData}/>
     </>
