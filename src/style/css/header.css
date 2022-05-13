@@ -9,6 +9,9 @@
   justify-content: space-between;
   padding: 1.5rem 1rem;
 }
+.header .container .h1 {
+  cursor: pointer;
+}
 .header .container .themeSwitch {
   border: none;
   font-size: 1.1rem;

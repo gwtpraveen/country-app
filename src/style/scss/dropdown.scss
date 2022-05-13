@@ -1,18 +1,22 @@
   
 .dropdown {
     position: relative;
-    width: 180px;
+    width: 160px;
     .dropbtn {
-        background-color: #4CAF50;
+        background-color: #fff;
         width: 100%;
-        color: white;
-        padding: .8rem 1.5rem;
-        font-size: 1.2rem;
+        padding: .8rem 1rem;
+        font-size: 0.9rem;
         border: none;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0px 0px 5px #0000004f;
 
         .fa-angle-down {
             margin-left: .5rem;
+            font-size: .6rem;
         }
     }
 

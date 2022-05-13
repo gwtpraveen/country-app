@@ -9,6 +9,8 @@ function App() {
 
   const [fetchedData, setFetchedData] = useState([]);
   const [darkTheme, setDarkTheme] = useState(false);
+  const [filterRegion, setFilterRegion] = useState("");
+  const [userSearch, setUserSearch] = useState("");
   const regions = useRef([]);
 
   useEffect(() => {
@@ -29,13 +31,34 @@ function App() {
       });
     });
   }, []);
-  
+
+
+  const handleReset = () => {
+    setFilterRegion("");
+    setUserSearch("");
+  };
+
+
+  const handleUserSearch = value => {
+    setUserSearch(value);
+  };
+
+
+  // filtering the data 
+  let filterdData = fetchedData;
+  if (filterRegion) {
+    filterdData = filterdData.filter(item => item.region === filterRegion);
+  }
+  if (userSearch) {
+    filterdData = filterdData.filter(item => item.name.toLowerCase() === userSearch);
+  }
+
 
   return (
     <>
-      <Header darkTheme={darkTheme}/>
-      <SearchBar regions={regions.current}/>
-      <CardsContainer data={fetchedData}/>
+      <Header darkTheme={darkTheme} setReset={handleReset}/>
+      <SearchBar regions={regions.current} setFilterRegion={setFilterRegion} setUserSearch={handleUserSearch}/>
+      <CardsContainer data={filterdData}/>
     </>
 
   );

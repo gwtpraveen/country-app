@@ -1,11 +1,11 @@
 import "../style/css/header.css";
 
-const Header = ({darkTheme}) => {
+const Header = ({darkTheme, setReset}) => {
     return ( 
         <header className="header">
             <div className="container">
-                <h1 className="h1">Where in the world?</h1>
-                <button className="themeSwitch">
+                <h1 className="h1" onClick={setReset}>Where in the world?</h1>
+                <button className="themeSwitch" title="Switch your theme">
                     { darkTheme ? 
                         <i className="fa-solid fa-moon"></i> :
                         <i className="fa-regular fa-moon"></i> } 

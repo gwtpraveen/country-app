@@ -1,7 +1,40 @@
 .searchBar {
-    max-width: 1050px;
-    margin: 1rem auto;
+    max-width: 1150px;
+    margin: 1rem auto 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .form {
+        flex-basis: 35%;
+        .formGroup {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding-left: 1rem;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.438);
+
+            .search {
+                width: 100%;
+                padding: .9rem .5rem .9rem 0;
+                margin-left: 1rem;
+                border: none;
+                font-family: inherit;
+                font-weight: 600;
+
+                &::placeholder {
+                    opacity: .8;
+                }
+
+                &:focus, &:active {
+                    outline: none;
+                }
+            }
+
+            .fa-magnifying-glass {
+                opacity: .6;
+            }
+        }
+    }
 }

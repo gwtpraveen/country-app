@@ -1,9 +1,37 @@
 .searchBar {
-  max-width: 1050px;
-  margin: 1rem auto;
+  max-width: 1150px;
+  margin: 1rem auto 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.searchBar .form {
+  flex-basis: 35%;
+}
+.searchBar .form .formGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 1rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.438);
+}
+.searchBar .form .formGroup .search {
+  width: 100%;
+  padding: 0.9rem 0.5rem 0.9rem 0;
+  margin-left: 1rem;
+  border: none;
+  font-family: inherit;
+  font-weight: 600;
+}
+.searchBar .form .formGroup .search::placeholder {
+  opacity: 0.8;
+}
+.searchBar .form .formGroup .search:focus, .searchBar .form .formGroup .search:active {
+  outline: none;
+}
+.searchBar .form .formGroup .fa-magnifying-glass {
+  opacity: 0.6;
 }
 
 /*# sourceMappingURL=searchBar.css.map */
