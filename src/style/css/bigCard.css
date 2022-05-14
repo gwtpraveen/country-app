@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: rgba(122, 122, 122, 0.433);
+  min-height: 400px;
 }
 .bigCard .flag {
   flex-basis: 45%;
@@ -22,6 +23,9 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
+.bigCard .row .col {
+  flex-basis: 45%;
+}
 .bigCard .row .col .detail {
   margin-bottom: 0.5rem;
 }
@@ -33,10 +37,12 @@
 }
 .bigCard .borders .bold {
   font-weight: 800;
+  white-space: nowrap;
 }
 .bigCard .borders .borderBtns {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   margin-left: 0.5rem;
   gap: 0.5rem;
 }

@@ -13,6 +13,7 @@ function App() {
   const [filterRegion, setFilterRegion] = useState("");
   const [userSearch, setUserSearch] = useState("");
   const regions = useRef([]);
+  const countryCodes = useRef({});
 
   useEffect(() => {
     axios.get("https://restcountries.com/v2/all").then(res => {
@@ -27,6 +28,9 @@ function App() {
             regions.current.push(currentRegion);
           }
         });
+
+        // get country codes and country names 
+        newData.forEach(item => {countryCodes.current[item.alpha3Code] = item.name});
         
         return newData;
       });
@@ -64,13 +68,14 @@ function App() {
     filterdData = filterdData.filter(item => item.name.toLowerCase() === userSearch);
   }
 
-  console.log(filterdData[0]);
+  console.log(filterdData[8]);
+  console.log(countryCodes.current)
   return (
     <>
       <Header darkTheme={darkTheme} setDarkTheme={handleTheme} setReset={handleReset}/>
       <SearchBar regions={regions.current} setFilterRegion={setFilterRegion} setUserSearch={handleUserSearch}/>
       {/* <CardsContainer data={filterdData}/> */}
-      {filterdData.length !== 0 && <BigCard data={filterdData[6]}/>}
+      {filterdData.length !== 0 && <BigCard data={filterdData[8]} code={countryCodes.current}/>}
     </>
 
   );

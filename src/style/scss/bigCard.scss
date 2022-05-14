@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: rgba(122, 122, 122, 0.433);
+    min-height: 400px;
 
     .flag {
         flex-basis: 45%;
@@ -26,6 +27,7 @@
         flex-wrap: wrap;
 
         .col {
+            flex-basis: 45%;
             .detail {
                 margin-bottom: .5rem;
 
@@ -41,11 +43,13 @@
 
         .bold {
             font-weight: 800;
+            white-space: nowrap;
         }
 
         .borderBtns {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             margin-left: .5rem;
             gap: .5rem;
             .borderBtn {
