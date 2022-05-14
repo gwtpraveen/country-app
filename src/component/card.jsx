@@ -1,9 +1,9 @@
 import "../style/css/card.css";
 
-const Card = ({data}) => {
+const Card = ({data, getBigCard}) => {
     const {name, population, region, capital, flags : {png}} = data;
     return ( 
-        <div className="card">
+        <div className="card" onClick={() => getBigCard(data)}>
             <img src={png} alt="" />
             <div className="cardDetails">
                 <h2 className="h2">{name}</h2>

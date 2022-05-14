@@ -12,6 +12,8 @@ function App() {
   const [darkTheme, setDarkTheme] = useState(false);
   const [filterRegion, setFilterRegion] = useState("");
   const [userSearch, setUserSearch] = useState("");
+  const [displayBigCard, setDisplayBigCard] = useState(false);
+  const [bigCardData, setBigCardData] = useState({})
   const regions = useRef([]);
   const countryCodes = useRef({});
 
@@ -41,6 +43,7 @@ function App() {
   const handleReset = () => {
     setFilterRegion("");
     setUserSearch("");
+    setDisplayBigCard(false);
   };
 
 
@@ -59,6 +62,12 @@ function App() {
   };
 
 
+  const handleGetBigCard = (data) => {
+    setBigCardData(data);
+    setDisplayBigCard(true);
+  }
+
+
   // filtering the data 
   let filterdData = fetchedData;
   if (filterRegion) {
@@ -68,14 +77,17 @@ function App() {
     filterdData = filterdData.filter(item => item.name.toLowerCase() === userSearch);
   }
 
-  console.log(filterdData[8]);
-  console.log(countryCodes.current)
+
   return (
     <>
       <Header darkTheme={darkTheme} setDarkTheme={handleTheme} setReset={handleReset}/>
-      <SearchBar regions={regions.current} setFilterRegion={setFilterRegion} setUserSearch={handleUserSearch}/>
-      {/* <CardsContainer data={filterdData}/> */}
-      {filterdData.length !== 0 && <BigCard data={filterdData[8]} code={countryCodes.current}/>}
+      {!displayBigCard ? 
+        <>
+            <SearchBar regions={regions.current} setFilterRegion={setFilterRegion} setUserSearch={handleUserSearch}/>
+            <CardsContainer data={filterdData} getBigCard={handleGetBigCard}/> 
+        </> :
+            <BigCard data={bigCardData} code={countryCodes.current}/>
+      }
     </>
 
   );
