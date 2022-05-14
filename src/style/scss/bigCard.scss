@@ -1,0 +1,57 @@
+.bigCard {
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(122, 122, 122, 0.433);
+
+    .flag {
+        flex-basis: 45%;
+    }
+
+    .countryDetails {
+        flex-basis: 45%;
+
+        .h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .col {
+            .detail {
+                margin-bottom: .5rem;
+
+                .bold {
+                    font-weight: 800;
+                }
+            }
+        }
+    }
+
+    .borders {
+        display: flex;
+
+        .bold {
+            font-weight: 800;
+        }
+
+        .borderBtns {
+            display: flex;
+            align-items: center;
+            margin-left: .5rem;
+            gap: .5rem;
+            .borderBtn {
+                padding: .1rem .2rem;
+                font-size: .7rem;
+            }
+        }
+    }
+}

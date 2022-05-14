@@ -1,27 +1,31 @@
+import "../style/css/bigCard.css";
+
 const BigCard = ({data}) => {
     const {flags: {png}, name, nativeName, population, region, subregion, capital, topLevelDomain, currencies, languages, borders} = data;
 
     return ( 
-        <div>
-            <img src={png} alt={`&{name} 's flag`} />
-            <div>
-                <h2>{name}</h2>
-                <div>
-                    <p><span>Native Name: </span>{nativeName}</p>
-                    <p><span>Population: </span>{population.toLocaleString()}</p>
-                    <p><span>Region: </span>{region}</p>
-                    <p><span>Sub Region: </span>{subregion}</p>
-                    <p><span>Capital: </span>{capital}</p>
+        <div className="bigCard">
+            <img src={png} alt={`&{name} 's flag`} className="flag"/>
+            <div className="countryDetails">
+                <h2 className="h2">{name}</h2>
+                <div className="row">
+                    <div className="col">
+                        <p className="detail"><span className="bold">Native Name: </span>{nativeName}</p>
+                        <p className="detail"><span className="bold">Population: </span>{population.toLocaleString()}</p>
+                        <p className="detail"><span className="bold">Region: </span>{region}</p>
+                        <p className="detail"><span className="bold">Sub Region: </span>{subregion}</p>
+                        <p className="detail"><span className="bold">Capital: </span>{capital}</p>
+                    </div>
+                    <div className="col">
+                        <p className="detail"><span className="bold">Top Level Domain: </span>{topLevelDomain.join(", ")}</p>
+                        <p className="detail"><span className="bold">Currencies: </span>{currencies.map(item => item.name).join(", ")}</p>
+                        <p className="detail"><span className="bold">Languages: </span>{languages.map(item => item.name).join(", ")}</p>
+                    </div>
                 </div>
-                <div>
-                    <p><span>Top Level Domain: </span>{topLevelDomain.join(", ")}</p>
-                    <p><span>Currencies: </span>{currencies.map(item => item.name).join(", ")}</p>
-                    <p><span>Languages: </span>{languages.map(item => item.name).join(", ")}</p>
-                </div>
-                <div>
-                    <p>Border Countrys: </p>
-                    <div>
-                        {borders.map(item => <button key={item}>{item}</button>)}
+                <div className="borders">
+                    <p className="bold">Border Countrys: </p>
+                    <div className="borderBtns">
+                        {borders.map(item => <button key={item} className="borderBtn">{item}</button>)}
                     </div>
                 </div>
             </div>
