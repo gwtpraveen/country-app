@@ -2,6 +2,7 @@ import './App.css';
 import CardsContainer from './component/cardsContainer';
 import Header from './component/header';
 import SearchBar from './component/searchBar';
+import BigCard from './component/bigCard';
 import axios from 'axios';
 import { useState, useEffect, useRef } from 'react';
 
@@ -63,12 +64,13 @@ function App() {
     filterdData = filterdData.filter(item => item.name.toLowerCase() === userSearch);
   }
 
-
+  console.log(filterdData[0]);
   return (
     <>
       <Header darkTheme={darkTheme} setDarkTheme={handleTheme} setReset={handleReset}/>
       <SearchBar regions={regions.current} setFilterRegion={setFilterRegion} setUserSearch={handleUserSearch}/>
-      <CardsContainer data={filterdData}/>
+      {/* <CardsContainer data={filterdData}/> */}
+      {filterdData.length !== 0 && <BigCard data={filterdData[6]}/>}
     </>
 
   );
