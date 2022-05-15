@@ -33,6 +33,7 @@
 }
 .bigCard .borders {
   display: flex;
+  margin-top: 1rem;
 }
 .bigCard .borders .bold {
   font-weight: 800;
@@ -46,8 +47,17 @@
   gap: 0.5rem;
 }
 .bigCard .borders .borderBtns .borderBtn {
-  padding: 0.1rem 0.2rem;
+  padding: 0.3rem 1rem;
   font-size: 0.7rem;
+  border: none;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.305);
+  cursor: pointer;
+}
+
+body.dark .bigCard .borders .borderBtns .borderBtn {
+  color: #fff;
+  background-color: hsl(209deg, 23%, 22%);
 }
 
 /*# sourceMappingURL=bigCard.css.map */

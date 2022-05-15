@@ -1,3 +1,5 @@
+@use "globla" as *;
+
 .bigCard {
     max-width: 1150px;
     margin: auto;
@@ -39,6 +41,7 @@
 
     .borders {
         display: flex;
+        margin-top: 1rem;
 
         .bold {
             font-weight: 800;
@@ -52,8 +55,25 @@
             margin-left: .5rem;
             gap: .5rem;
             .borderBtn {
-                padding: .1rem .2rem;
+                padding: .3rem 1rem;
                 font-size: .7rem;
+                border: none;
+                background-color: transparent;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.305);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+body.dark {
+    .bigCard {
+        .borders {
+            .borderBtns {
+                .borderBtn {
+                    color: #fff;
+                    background-color: $light-Dark-Bg-Color;
+                }
             }
         }
     }

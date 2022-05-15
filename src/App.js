@@ -66,6 +66,12 @@ function App() {
     setDisplayBigCard(true);
   }
 
+  
+  const handleBorder = (name) => {
+    const country = fetchedData.filter(item => item.name === name);
+    setBigCardData(country[0]);
+  }
+
 
   // filtering the data 
   let filterdData = fetchedData;
@@ -89,7 +95,7 @@ function App() {
       />
       {!displayBigCard ? 
         <CardsContainer data={filterdData} getBigCard={handleGetBigCard}/> :
-        <BigCard data={bigCardData} code={countryCodes.current}/>
+        <BigCard data={bigCardData} code={countryCodes.current} onBorderBtn={handleBorder}/>
       }
     </>
 

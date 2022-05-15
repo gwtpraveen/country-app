@@ -1,6 +1,6 @@
 import "../style/css/bigCard.css";
 
-const BigCard = ({data, code}) => {
+const BigCard = ({data, code, onBorderBtn}) => {
     const {flags: {png}, name, nativeName, population, region, subregion, capital, topLevelDomain, currencies, languages, borders} = data;
 
     return ( 
@@ -41,7 +41,7 @@ const BigCard = ({data, code}) => {
                 {<div className="borders">
                     <p className="bold">Border Countrys: </p>
                     <div className="borderBtns">
-                        {borders ? borders.map(item => <button key={item} className="borderBtn">{code[item]}</button>) : "--"}
+                        {borders ? borders.map(item => <button key={item} className="borderBtn" onClick={() => onBorderBtn(code[item])}>{code[item]}</button>) : "--"}
                     </div>
                 </div>}
             </div>
