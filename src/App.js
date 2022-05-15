@@ -81,12 +81,16 @@ function App() {
   return (
     <>
       <Header darkTheme={darkTheme} setDarkTheme={handleTheme} setReset={handleReset}/>
+      <SearchBar 
+        regions={regions.current} 
+        setFilterRegion={setFilterRegion} 
+        setUserSearch={handleUserSearch} 
+        displayBigCard={displayBigCard}
+        setReset={handleReset}
+      />
       {!displayBigCard ? 
-        <>
-            <SearchBar regions={regions.current} setFilterRegion={setFilterRegion} setUserSearch={handleUserSearch}/>
-            <CardsContainer data={filterdData} getBigCard={handleGetBigCard}/> 
-        </> :
-            <BigCard data={bigCardData} code={countryCodes.current}/>
+        <CardsContainer data={filterdData} getBigCard={handleGetBigCard}/> :
+        <BigCard data={bigCardData} code={countryCodes.current}/>
       }
     </>
 

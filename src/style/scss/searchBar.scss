@@ -1,6 +1,6 @@
 .searchBar {
     max-width: 1150px;
-    margin: 1rem auto 2.5rem;
+    margin: 4rem auto 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,5 +36,17 @@
                 opacity: .6;
             }
         }
+    }
+}
+
+.backBtn {
+    padding: .5rem 1.5rem;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.239);
+    background-color: transparent;
+    cursor: pointer;
+
+    .fa-arrow-left-long {
+        margin-right: .5rem;
     }
 }
