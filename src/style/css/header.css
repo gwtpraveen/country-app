@@ -23,4 +23,12 @@
   margin-right: 0.5rem;
 }
 
+body.dark .header {
+  background-color: hsl(209deg, 23%, 22%);
+  color: #fff;
+}
+body.dark .header .container .themeSwitch {
+  color: #fff;
+}
+
 /*# sourceMappingURL=header.css.map */

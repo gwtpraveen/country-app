@@ -1,3 +1,5 @@
+@use "globla" as *;
+
 .searchBar {
     max-width: 1150px;
     margin: 4rem auto 3rem;
@@ -48,5 +50,27 @@
 
     .fa-arrow-left-long {
         margin-right: .5rem;
+    }
+}
+
+body.dark {
+    .searchBar {
+        .form {
+            .formGroup {
+                background-color: $light-Dark-Bg-Color;
+                .search {
+                    background-color: $light-Dark-Bg-Color;
+                    color: #fff;
+
+                    &::placeholder {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    .backBtn {
+        color: #fff;
+        background-color: hsl(209, 23%, 22%);
     }
 }

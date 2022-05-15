@@ -42,4 +42,16 @@
   display: block;
 }
 
+body.dark .dropdown .dropbtn {
+  background-color: hsl(209deg, 23%, 22%);
+  color: #fff;
+}
+body.dark .dropdown .dropdown-content {
+  background-color: hsl(209deg, 23%, 22%);
+  color: #fff;
+}
+body.dark .dropdown .dropdown-content p:hover {
+  background-color: hsl(207deg, 23%, 28%);
+}
+
 /*# sourceMappingURL=dropdown.css.map */

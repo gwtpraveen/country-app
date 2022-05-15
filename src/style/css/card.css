@@ -3,7 +3,7 @@
   height: 360px;
   border-radius: 5px;
   overflow: hidden;
-  background-color: gray;
+  background-color: hsl(0deg, 0%, 100%);
 }
 .card img {
   width: 100%;
@@ -22,6 +22,10 @@
 }
 .card .cardDetails .dataRow .bold {
   font-weight: 600;
+}
+
+body.dark .card {
+  background-color: hsl(209deg, 23%, 22%);
 }
 
 /*# sourceMappingURL=card.css.map */

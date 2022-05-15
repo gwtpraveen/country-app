@@ -1,4 +1,5 @@
-  
+@use "globla" as *;
+
 .dropdown {
     position: relative;
     width: 160px;
@@ -45,4 +46,24 @@
 
 .dropdown.show .dropdown-content {
     display: block;
+}
+
+body.dark {
+    .dropdown {
+        .dropbtn {
+            background-color: $light-Dark-Bg-Color;
+            color: #fff;
+        }
+
+        .dropdown-content {
+            background-color: $light-Dark-Bg-Color;
+            color: #fff;
+
+            p {
+                &:hover {
+                    background-color: hsl(207, 23%, 28%);
+                }
+            }
+        }
+    }
 }

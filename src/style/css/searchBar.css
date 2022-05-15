@@ -45,4 +45,19 @@
   margin-right: 0.5rem;
 }
 
+body.dark .searchBar .form .formGroup {
+  background-color: hsl(209deg, 23%, 22%);
+}
+body.dark .searchBar .form .formGroup .search {
+  background-color: hsl(209deg, 23%, 22%);
+  color: #fff;
+}
+body.dark .searchBar .form .formGroup .search::placeholder {
+  color: #fff;
+}
+body.dark .backBtn {
+  color: #fff;
+  background-color: hsl(209deg, 23%, 22%);
+}
+
 /*# sourceMappingURL=searchBar.css.map */

@@ -1,4 +1,3 @@
-import './App.css';
 import CardsContainer from './component/cardsContainer';
 import Header from './component/header';
 import SearchBar from './component/searchBar';

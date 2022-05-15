@@ -1,9 +1,11 @@
+@use "globla" as *;
+
 .card {
     width: 260px;
     height: 360px;
     border-radius: 5px;
     overflow: hidden;
-    background-color: gray;
+    background-color: $Card-background-Color-Ligit;
 
     img {
         width: 100%;
@@ -24,5 +26,12 @@
                 font-weight: 600;
             }
         }
+    }
+}
+
+body.dark {
+    .card {
+        background-color: $Card-background-Color-Dark;
+        // color: $Card-color;
     }
 }
