@@ -16,6 +16,7 @@ function App() {
   const [bigCardData, setBigCardData] = useState({})
   const regions = useRef([]);
   const countryCodes = useRef({});
+  const countryNames = useRef([]);
 
   useEffect(() => {
     axios.get("https://restcountries.com/v2/all").then(res => {
@@ -32,8 +33,11 @@ function App() {
         });
 
         // get country codes and country names 
-        newData.forEach(item => {countryCodes.current[item.alpha3Code] = item.name});
-        
+        newData.forEach(item => {
+          countryCodes.current[item.alpha3Code] = item.name;
+          countryNames.current.push(item.name.toLowerCase());
+        });
+
         return newData;
       });
     });
@@ -98,7 +102,7 @@ function App() {
             !displayBigCard ? 
         <CardsContainer data={filterdData} getBigCard={handleGetBigCard}/> :
           <BigCard data={bigCardData} code={countryCodes.current} onBorderBtn={handleBorder}/> : 
-        <NotFound serachedCountry={userSearch} setReset={handleReset}/>}
+        <NotFound serachedCountry={userSearch} setReset={handleReset} countrys={countryNames.current}/>}
     </>
 
   );
