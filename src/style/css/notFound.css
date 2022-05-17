@@ -1,0 +1,29 @@
+.notFound {
+  max-width: 1150px;
+  margin: auto;
+}
+.notFound .h3 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+.notFound ul li {
+  margin-left: 2rem;
+}
+.notFound .btn {
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: transparent;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.334);
+  cursor: pointer;
+}
+.notFound .btn .fa-house {
+  margin-right: 0.5rem;
+}
+
+body.dark .notFound .btn {
+  color: #fff;
+  background-color: hsl(209deg, 23%, 22%);
+}
+
+/*# sourceMappingURL=notFound.css.map */

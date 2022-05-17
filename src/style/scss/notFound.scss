@@ -1,0 +1,39 @@
+@use "globla" as *;
+
+.notFound {
+    max-width: 1150px;
+    margin: auto;
+
+    .h3 {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        li{
+           margin-left: 2rem;
+       }
+    }
+
+    .btn {
+        margin-top: 1.5rem;
+        padding: .5rem 1rem;
+        border: none;
+        background-color: transparent;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.334);
+        cursor: pointer;
+
+        .fa-house {
+            margin-right: .5rem;
+        }
+    }
+}
+
+body.dark {
+    .notFound {
+        .btn {
+            color: #fff;
+            background-color: $light-Dark-Bg-Color;
+        }
+    }
+}

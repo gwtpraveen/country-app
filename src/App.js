@@ -2,6 +2,7 @@ import CardsContainer from './component/cardsContainer';
 import Header from './component/header';
 import SearchBar from './component/searchBar';
 import BigCard from './component/bigCard';
+import NotFound from './component/notFound';
 import axios from 'axios';
 import { useState, useEffect, useRef } from 'react';
 
@@ -93,10 +94,11 @@ function App() {
         displayBigCard={displayBigCard}
         setReset={handleReset}
       />
-      {!displayBigCard ? 
+      {filterdData.length !== 0 ? 
+            !displayBigCard ? 
         <CardsContainer data={filterdData} getBigCard={handleGetBigCard}/> :
-        <BigCard data={bigCardData} code={countryCodes.current} onBorderBtn={handleBorder}/>
-      }
+          <BigCard data={bigCardData} code={countryCodes.current} onBorderBtn={handleBorder}/> : 
+        <NotFound serachedCountry={userSearch}/>}
     </>
 
   );
