@@ -1,0 +1,10 @@
+.loading {
+  max-width: 1150px;
+  margin: 6rem auto 0;
+  text-align: center;
+}
+.loading img {
+  width: 100px;
+}
+
+/*# sourceMappingURL=loading.css.map */

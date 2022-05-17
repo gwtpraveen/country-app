@@ -3,6 +3,7 @@ import Header from './component/header';
 import SearchBar from './component/searchBar';
 import BigCard from './component/bigCard';
 import NotFound from './component/notFound';
+import Loading from './component/loading';
 import axios from 'axios';
 import { useState, useEffect, useRef } from 'react';
 
@@ -13,7 +14,8 @@ function App() {
   const [filterRegion, setFilterRegion] = useState("");
   const [userSearch, setUserSearch] = useState("");
   const [displayBigCard, setDisplayBigCard] = useState(false);
-  const [bigCardData, setBigCardData] = useState({})
+  const [bigCardData, setBigCardData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
   const regions = useRef([]);
   const countryCodes = useRef({});
   const countryNames = useRef([]);
@@ -35,9 +37,12 @@ function App() {
         // get country codes and country names 
         newData.forEach(item => {
           countryCodes.current[item.alpha3Code] = item.name;
-          countryNames.current.push(item.name.toLowerCase());
+          if (!countryNames.current.includes(item.name.toLowerCase())) {
+            countryNames.current.push(item.name.toLowerCase());
+          }
         });
-
+        
+        setIsLoading(false);
         return newData;
       });
     });
@@ -98,11 +103,18 @@ function App() {
         displayBigCard={displayBigCard}
         setReset={handleReset}
       />
-      {filterdData.length !== 0 ? 
-            !displayBigCard ? 
-        <CardsContainer data={filterdData} getBigCard={handleGetBigCard}/> :
-          <BigCard data={bigCardData} code={countryCodes.current} onBorderBtn={handleBorder}/> : 
-        <NotFound serachedCountry={userSearch} setReset={handleReset} countrys={countryNames.current}/>}
+      { isLoading ? 
+          <Loading/> : 
+          filterdData.length !== 0 ? 
+              !displayBigCard ? 
+                <CardsContainer data={filterdData} getBigCard={handleGetBigCard}/> :
+              <BigCard data={bigCardData} code={countryCodes.current} onBorderBtn={handleBorder}/> : 
+          <NotFound serachedCountry={userSearch} setReset={handleReset} countrys={countryNames.current}/>
+        }
+
+
+
+
     </>
 
   );

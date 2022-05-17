@@ -11,6 +11,7 @@ const NotFound = ({serachedCountry, setReset, countrys}) => {
                     <li>Try different Keywords</li>
                 </ul>
             </div>
+            <button className="btn" onClick={setReset}><i className="fa-solid fa-house"></i>Home</button>
             <h3 className="h3">Similar Results: </h3>
             <div>
                 <ul>
@@ -21,7 +22,6 @@ const NotFound = ({serachedCountry, setReset, countrys}) => {
                     })}
                 </ul>
             </div>
-            <button className="btn" onClick={setReset}><i className="fa-solid fa-house"></i>Home</button>
         </div>
      );
 }
