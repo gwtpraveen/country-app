@@ -17,7 +17,7 @@ const NotFound = ({serachedCountry, setReset, countrys}) => {
                 <ul>
                     {countrys.map(item => {
                         if (item.startsWith(serachedCountry.slice(0, 2))) {
-                            return <li>{item}</li>
+                            return <li key={item}>{item}</li>
                         }
                     })}
                 </ul>

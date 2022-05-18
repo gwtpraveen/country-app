@@ -37,3 +37,15 @@ body.dark {
         }
     }
 }
+
+@media (max-width: 450px) {
+    .header {
+        .container {
+            flex-direction: column;
+
+            .h1 {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

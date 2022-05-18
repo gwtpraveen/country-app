@@ -41,7 +41,7 @@ function App() {
             countryNames.current.push(item.name.toLowerCase());
           }
         });
-        
+
         setIsLoading(false);
         return newData;
       });

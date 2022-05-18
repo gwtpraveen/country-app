@@ -6,6 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 10px;
 
     .form {
         flex-basis: 35%;
@@ -39,19 +40,20 @@
             }
         }
     }
-}
 
-.backBtn {
-    padding: .5rem 1.5rem;
-    border: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.239);
-    background-color: transparent;
-    cursor: pointer;
-
-    .fa-arrow-left-long {
-        margin-right: .5rem;
+    .backBtn {
+        padding: .5rem 1.5rem;
+        border: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.239);
+        background-color: transparent;
+        cursor: pointer;
+    
+        .fa-arrow-left-long {
+            margin-right: .5rem;
+        }
     }
 }
+
 
 body.dark {
     .searchBar {
@@ -72,5 +74,16 @@ body.dark {
     .backBtn {
         color: #fff;
         background-color: hsl(209, 23%, 22%);
+    }
+}
+
+@media (max-width: 640px) {
+    .searchBar {
+        flex-direction: column;
+        align-items: flex-start;
+        .form {
+            margin-bottom: 1rem;
+            width: 100%;
+        }
     }
 }

@@ -5,9 +5,11 @@
   align-items: center;
   justify-content: space-between;
   min-height: 400px;
+  padding: 0 10px;
 }
 .bigCard .flag {
   flex-basis: 45%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 .bigCard .countryDetails {
   flex-basis: 45%;
@@ -51,13 +53,40 @@
   font-size: 0.7rem;
   border: none;
   background-color: transparent;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.305);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.305);
   cursor: pointer;
 }
 
+body.dark .bigCard {
+  padding: 0 10px;
+}
 body.dark .bigCard .borders .borderBtns .borderBtn {
   color: #fff;
   background-color: hsl(209deg, 23%, 22%);
+}
+
+@media (max-width: 750px) {
+  .bigCard .row .col {
+    flex-basis: 100%;
+  }
+  .bigCard .borders {
+    flex-direction: column;
+  }
+  .bigCard .borders .borderBtns {
+    margin-top: 0.5rem;
+  }
+}
+@media (max-width: 620px) {
+  .bigCard {
+    flex-direction: column;
+  }
+  .bigCard .flag {
+    width: 90%;
+  }
+  .bigCard .countryDetails {
+    padding: 2rem 0;
+    width: 90%;
+  }
 }
 
 /*# sourceMappingURL=bigCard.css.map */

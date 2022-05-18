@@ -7,9 +7,11 @@
     align-items: center;
     justify-content: space-between;
     min-height: 400px;
+    padding: 0 10px;
 
     .flag {
         flex-basis: 45%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     }
 
     .countryDetails {
@@ -59,7 +61,7 @@
                 font-size: .7rem;
                 border: none;
                 background-color: transparent;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.305);
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.305);
                 cursor: pointer;
             }
         }
@@ -68,6 +70,7 @@
 
 body.dark {
     .bigCard {
+        padding: 0 10px;
         .borders {
             .borderBtns {
                 .borderBtn {
@@ -75,6 +78,40 @@ body.dark {
                     background-color: $light-Dark-Bg-Color;
                 }
             }
+        }
+    }
+}
+
+
+@media (max-width: 750px) {
+    .bigCard {
+        .row {
+            .col {
+                flex-basis: 100%;
+            }
+        }
+
+        .borders {
+            flex-direction: column;
+
+            .borderBtns {
+                margin-top: .5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 620px) {
+    .bigCard {
+        flex-direction: column;
+
+        .flag {
+            width: 90%;
+        }
+
+        .countryDetails {
+            padding: 2rem 0;
+            width: 90%;
         }
     }
 }

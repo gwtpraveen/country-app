@@ -4,6 +4,7 @@
   border-radius: 5px;
   overflow: hidden;
   background-color: hsl(0deg, 0%, 100%);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 .card img {
   width: 100%;

@@ -31,4 +31,13 @@ body.dark .header .container .themeSwitch {
   color: #fff;
 }
 
+@media (max-width: 450px) {
+  .header .container {
+    flex-direction: column;
+  }
+  .header .container .h1 {
+    margin-bottom: 1rem;
+  }
+}
+
 /*# sourceMappingURL=header.css.map */
