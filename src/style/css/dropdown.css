@@ -13,6 +13,8 @@
   align-items: center;
   justify-content: space-between;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3098039216);
+  transition: 500ms ease;
+  border-radius: 5px;
 }
 .dropdown .dropbtn .fa-angle-down {
   margin-left: 0.5rem;
@@ -27,6 +29,7 @@
   left: 0;
   right: 0;
   top: 110%;
+  border-radius: 5px;
 }
 .dropdown .dropdown-content p {
   padding: 12px 16px;

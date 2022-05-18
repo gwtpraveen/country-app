@@ -1,6 +1,10 @@
 import "../style/css/notFound.css";
 
 const NotFound = ({serachedCountry, setReset, countrys}) => {
+    const similarResult = countrys.filter(item => item.startsWith(serachedCountry.slice(0, 2)));
+    console.log(similarResult)
+
+
     return ( 
         <div className="notFound">
             <h2>We couldn't find a match for "{serachedCountry}". Please try another search</h2>
@@ -12,16 +16,12 @@ const NotFound = ({serachedCountry, setReset, countrys}) => {
                 </ul>
             </div>
             <button className="btn" onClick={setReset}><i className="fa-solid fa-house"></i>Home</button>
-            <h3 className="h3">Similar Results: </h3>
-            <div>
+            {similarResult.length > 0 ? <>
+                <h3 className="h3">Similar Results: </h3>
                 <ul>
-                    {countrys.map(item => {
-                        if (item.startsWith(serachedCountry.slice(0, 2))) {
-                            return <li key={item}>{item}</li>
-                        }
-                    })}
+                    {similarResult.map(item => <li key={item}>{item}</li>)}
                 </ul>
-            </div>
+            </> : ""}
         </div>
      );
 }

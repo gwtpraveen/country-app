@@ -17,6 +17,9 @@
             justify-content: space-around;
             padding-left: 1rem;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.438);
+            transition: 500ms ease;
+            border-radius: 5px;
+            overflow: hidden;
 
             .search {
                 width: 100%;
@@ -25,6 +28,7 @@
                 border: none;
                 font-family: inherit;
                 font-weight: 600;
+                transition: 500ms ease;
 
                 &::placeholder {
                     opacity: .8;
@@ -47,6 +51,7 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.239);
         background-color: transparent;
         cursor: pointer;
+        border-radius: 5px;
     
         .fa-arrow-left-long {
             margin-right: .5rem;
