@@ -10,6 +10,21 @@
 .notFound ul li {
   margin-left: 2rem;
 }
+.notFound .similarResultes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.notFound .similarResultes li {
+  cursor: pointer;
+  font-weight: bold;
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+  transition: 300ms ease;
+}
+.notFound .similarResultes li:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
 .notFound .btn {
   margin-top: 1.5rem;
   padding: 0.5rem 1rem;
@@ -25,6 +40,12 @@
 body.dark .notFound .btn {
   color: #fff;
   background-color: hsl(209deg, 23%, 22%);
+}
+
+@media (min-width: 500px) {
+  .notFound .similarResultes {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 /*# sourceMappingURL=notFound.css.map */

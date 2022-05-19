@@ -56,11 +56,13 @@ function App() {
   };
 
 
+  // handle user search 
   const handleUserSearch = value => {
     setUserSearch(value);
   };
 
 
+  // handle theme change 
   const handleTheme = value => {
     setDarkTheme(value);
     if (value) {
@@ -71,12 +73,25 @@ function App() {
   };
 
 
+  // show bigcard when use click similar result link on the not found page 
+  const handleLinkClick = (countryName) => {
+    setUserSearch(countryName);
+    const countryData = fetchedData.filter(item => item.name.toLowerCase() === countryName);
+    if (countryData.length === 1) {
+      setBigCardData(countryData[0]);
+      setDisplayBigCard(true);
+    }
+  }
+
+
+  // show big card 
   const handleGetBigCard = (data) => {
     setBigCardData(data);
     setDisplayBigCard(true);
   }
 
   
+  // show result when user click border buttons on big card 
   const handleBorder = (name) => {
     const country = fetchedData.filter(item => item.name === name);
     setBigCardData(country[0]);
@@ -109,14 +124,9 @@ function App() {
               !displayBigCard ? 
                 <CardsContainer data={filterdData} getBigCard={handleGetBigCard}/> :
               <BigCard data={bigCardData} code={countryCodes.current} onBorderBtn={handleBorder}/> : 
-          <NotFound serachedCountry={userSearch} setReset={handleReset} countrys={countryNames.current}/>
+          <NotFound serachedCountry={userSearch} setReset={handleReset} countrys={countryNames.current} onLinkClick={handleLinkClick}/>
         }
-
-
-
-
     </>
-
   );
 }
 

@@ -1,9 +1,7 @@
 import "../style/css/notFound.css";
 
-const NotFound = ({serachedCountry, setReset, countrys}) => {
+const NotFound = ({serachedCountry, setReset, countrys, onLinkClick}) => {
     const similarResult = countrys.filter(item => item.startsWith(serachedCountry.slice(0, 2)));
-    console.log(similarResult)
-
 
     return ( 
         <div className="notFound">
@@ -18,8 +16,8 @@ const NotFound = ({serachedCountry, setReset, countrys}) => {
             <button className="btn" onClick={setReset}><i className="fa-solid fa-house"></i>Home</button>
             {similarResult.length > 0 ? <>
                 <h3 className="h3">Similar Results: </h3>
-                <ul>
-                    {similarResult.map(item => <li key={item}>{item}</li>)}
+                <ul className="similarResultes">
+                    {similarResult.map(item => <li key={item} onClick={() => onLinkClick(item)}>{item}</li>)}
                 </ul>
             </> : ""}
         </div>
