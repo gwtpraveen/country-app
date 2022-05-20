@@ -9,13 +9,39 @@
     min-height: 400px;
     padding: 0 10px;
 
+    @keyframes fadein {
+        0% {
+            opacity: 0;
+            transform: translateX(-50%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
     .flag {
         flex-basis: 45%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        animation-name: fadein;
+        animation-duration: 1000ms;
+    }
+
+    @keyframes fadeinDetails {
+        0% {
+            opacity: 0;
+            transform: translateX(50%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
 
     .countryDetails {
         flex-basis: 45%;
+        animation-name: fadeinDetails;
+        animation-duration: 1000ms;
 
         .h2 {
             font-size: 1.8rem;

@@ -1,5 +1,5 @@
 import Card from "./card";
-import "../style/css/cardsContainer.css"
+import "../style/css/cardsContainer.css";
 
 const CardsContainer = ({data, getBigCard}) => {
     return ( 
