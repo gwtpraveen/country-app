@@ -42,7 +42,7 @@ const Card = ({data, getBigCard}) => {
     const {name, population, region, capital, flags : {png}} = data;
     return ( 
         <div className="card" onClick={() => getBigCard(data)} ref={cardEl}>
-            <img src="" alt="country Flag" data-src={png}/>
+            <img src="/thiswillreplacesoon" alt="country Flag" data-src={png}/>
             <div className="cardDetails">
                 <h2 className="h2">{name}</h2>
                 <p className="dataRow">
