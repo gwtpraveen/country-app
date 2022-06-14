@@ -1,10 +1,10 @@
 import "../style/css/card.css";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 const Card = ({data, getBigCard}) => {
     const cardEl = useRef();
     
-    setTimeout(() => {
+    useEffect(() => {
         const cardOpctions  = {
             threshold: 0.5
         };
@@ -37,7 +37,7 @@ const Card = ({data, getBigCard}) => {
             cardObserver.observe(cardEl.current);
             lazyLoadingImg.observe(cardEl.current);
         }
-    }, 500)
+    })
 
     const {name, population, region, capital, flags : {png}} = data;
     return ( 
