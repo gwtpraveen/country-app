@@ -108,6 +108,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## Author
 
-- github - [Tim5583](https://github.com/Tim5583)
-- Frontend Mentor - [@Tim5583](https://www.frontendmentor.io/profile/Tim5583)
-- Twitter - [@Praveen_TGW](https://twitter.com/Praveen_TGW)
+- github - [gwtpraveen](https://github.com/gwtpraveen)
+- Frontend Mentor - [@gwtpraveen](https://www.frontendmentor.io/profile/gwtpraveen)
+- Twitter - [@gwtpraveen](https://twitter.com/gwtPraveen)
